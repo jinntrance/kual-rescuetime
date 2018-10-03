@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension>
+    <information>
+        <name>RescueTime</name>
+        <version>0.1</version>
+        <author>Joseph Jin-Chuan TANG</author>
+        <id>rescuetime</id>
+    </information>
+    <menus>
+        <menu type="json" dynamic="true">menu.json</menu>
+    </menus>
+</extension>

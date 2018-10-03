@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "name": "KUAL RescueTime",
+      "priority": -998,
+      "items": [
+        {
+          "name": "Manual Sync",
+          "action": "./bin/metrics.sh",
+          "exitmenu": false,
+          "refresh": false,
+          "internal": "查看阅读统计"
+        },
+        {
+          "name": "Enable RescueTime Log",
+          "if": "\"/mnt/us/extensions/rescuetime/etc/enable\"  -f!",
+          "action": "./bin/setup.sh",
+          "params": "enable",
+          "exitmenu": false,
+          "refresh": true,
+          "status": false,
+          "internal": "Enable RescueTime Log"
+        },
+        {
+          "name": "Disable RescueTime Log",
+          "if": "\"/mnt/us/extensions/rescuetime/etc/enable\"  -f",
+          "action": "./bin/setup.sh",
+          "params": "disable",
+          "exitmenu": false,
+          "refresh": true,
+          "status": false,
+          "internal": "Disable RescueTime Log"
+        },
+        {
+          "name": "Clear Log",
+          "action": "./bin/setup.sh",
+          "params": "reset",
+          "exitmenu": false,
+          "refresh": false,
+          "status": false,
+          "internal": "Clear log"
+        }
+      ]
+    }
+  ]
+}

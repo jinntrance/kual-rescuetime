@@ -1,5 +1,5 @@
-# kual-rescuetime
-Log your Kindle e-reader's reading metrics to RescueTime with IFTTT
+# KUAL RescueTime
+Log your reading time on Kindle e-reader's to RescueTime with IFTTT
 
 ## Installation
 

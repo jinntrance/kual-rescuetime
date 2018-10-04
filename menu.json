@@ -13,7 +13,7 @@
         },
         {
           "name": "Enable RescueTime Log",
-          "if": "/mnt/us/extensions/kual-rescuetime-master/etc/enable  -f!",
+          "if": "\"/mnt/us/extensions/kual-rescuetime-master/etc/enable\"  -f!",
           "action": "./bin/setup.sh",
           "params": "enable",
           "exitmenu": false,
@@ -23,7 +23,7 @@
         },
         {
           "name": "Disable RescueTime Log",
-          "if": "/mnt/us/extensions/kual-rescuetime-master/etc/enable  -f",
+          "if": "\"/mnt/us/extensions/kual-rescuetime-master/etc/enable\"  -f",
           "action": "./bin/setup.sh",
           "params": "disable",
           "exitmenu": false,

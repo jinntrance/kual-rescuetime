@@ -9,7 +9,7 @@ rescuetime_enable()
 	cp /etc/syslog-ng/syslog-ng.conf $BASEDIR/etc/syslog-ng.conf.bak
 	cat $BASEDIR/etc/syslog-ng.conf.bak $BASEDIR/etc/rescuetime.conf > /etc/syslog-ng/syslog-ng.conf
 	if [[  "`grep -c rescuetime /etc/crontab/root`" ]] ; then
-	    echo -e "*/60 * * * * bash $BASEDIR/bin/sync.sh\n" >> /etc/crontab/root
+	    echo -e "*/60 * * * * cd $BASEDIR && bash ./bin/sync.sh\n" >> /etc/crontab/root
 	fi
 	eips 13 34 "RescueTime Enabled"
 	cat /etc/crontab/root

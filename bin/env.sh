@@ -1,5 +1,5 @@
 #!/bin/bash
 BASE=`dirname "$0"`
-BASEDIR=`dirname "$BASE"`
+BASEDIR=`pwd`/`dirname "$BASE"`
 echo $BASEDIR
 key=''

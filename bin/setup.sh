@@ -1,21 +1,21 @@
-#!/bin/sh
-BASEDIR=/mnt/us/extensions/rescuetime
+#!/bin/bash
 
-## enable
+BASE=`dirname "$0"`
+source $BASE/../bin/env.sh
+
 rescuetime_enable()
 {
 	mntroot rw
 	cp /etc/syslog-ng/syslog-ng.conf $BASEDIR/etc/syslog-ng.conf.bak
 	cat $BASEDIR/etc/syslog-ng.conf.bak $BASEDIR/etc/rescuetime.conf > /etc/syslog-ng/syslog-ng.conf
 	if [[  "`grep -c rescuetime /etc/crontab/root`" ]] ; then
-	    echo "*/60 * * * * bash $BASEDIR/sync.sh" >> /etc/crontab/root
+	    echo "*/60 * * * * bash $BASEDIR/bin/sync.sh" >> /etc/crontab/root
 	fi
 	cat /etc/crontab/root
 	mntroot ro
 	touch ./etc/enable
 }
 
-## disable
 rescuetime_disable()
 {
 	mntroot rw
@@ -26,15 +26,11 @@ rescuetime_disable()
 	rm -f ./etc/enable
 }
 
-
-## reset
-rescuetime_reset()
+rescuetime_clear()
 {
 	rm -f ./log/*
-	usleep 150000
-	eips 15 35 "Reset success"
+	eips 15 35 "Log Cleared"
 	usleep 1000000
-	eips 15 35 "             "
 }
 
 ## Main
@@ -46,7 +42,7 @@ case "$1" in
 		rescuetime_disable
 	;;
 	"reset" )
-		rescuetime_reset
+		rescuetime_clear
 	;;
 	* )
 	;;

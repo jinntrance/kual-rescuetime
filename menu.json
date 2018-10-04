@@ -5,11 +5,11 @@
       "priority": -998,
       "items": [
         {
-          "name": "Manual Sync",
-          "action": "./bin/metrics.sh",
+          "name": "Sync Manually",
+          "action": "./bin/sync.sh",
           "exitmenu": false,
           "refresh": false,
-          "internal": "查看阅读统计"
+          "internal": "Sync Manually"
         },
         {
           "name": "Enable RescueTime Log",
@@ -32,13 +32,13 @@
           "internal": "Disable RescueTime Log"
         },
         {
-          "name": "Clear Log",
+          "name": "Clear Local Log",
           "action": "./bin/setup.sh",
           "params": "reset",
           "exitmenu": false,
           "refresh": false,
           "status": false,
-          "internal": "Clear log"
+          "internal": "Clear Local Log"
         }
       ]
     }

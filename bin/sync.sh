@@ -14,14 +14,12 @@ while IFS=, read start_dt end_dt; do
     case $ret in
         *Congrat*)
             echo $ret
-            eips 13 34 "Synced $start_dt"
-            eips 13 36 "       $end_dt"
+            eips 22 0 "Synced $start_dt"
             sed -i "/$end_dt/d" $CURRENT_LOG
             ;;
         *)
-            eips 9 34 "Failed to sync RescueTime"
-            eips 9 36 "$ret"
-            usleep 150000
+            eips 22 0 "Failed to sync RescueTime"
+            #eips 9 36 -h "$ret"
             ;;
     esac
 done < $LATEST_LOG
